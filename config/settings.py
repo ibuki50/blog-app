@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!a#t5_6+%$edz3kn(tiv5pcd^*c^gm!6d2@+f66nk0w5ah9h5k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.137', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -137,5 +137,3 @@ LOGIN_URL = 'login'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_RESTRICT_BY_USER = False
-
-ALLOWED_HOSTS = ['ibuki50.pythonanywhere.com']
