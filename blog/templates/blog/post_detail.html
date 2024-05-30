@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="post-detail">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content|safe }}</p>
+    <p>投稿者: {{ post.author.username }}</p>
+    <p>カテゴリ: {{ post.category.name }}</p>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+    {% endif %}
+    <div class="post-actions">
+        <a href="{% url 'post_edit' post.pk %}">編集</a>
+        <a href="{% url 'post_delete' post.pk %}">削除</a>
+    </div>
+    <a href="{% url 'post_list' %}">トップページ</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<h1>アカウント作成</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">登録</button>
+</form>
+<a href="{% url 'post_list' %}">トップページ</a>
+{% endblock %}

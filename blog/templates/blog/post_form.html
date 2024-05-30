@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% extends 'blog/base.html' %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<h1>ブログを書く</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <button type="submit">保存</button>
+</form>
+<a href="{% url 'post_list' %}">トップページ</a>
+{% endblock %}
