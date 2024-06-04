@@ -8,3 +8,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 };
+
+CKEDITOR.replace( 'editor1', {
+		filebrowserUploadMethod:'form'
+	});
