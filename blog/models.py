@@ -16,8 +16,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    """category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)"""
-    image = models.ImageField(upload_to='blog_images', null=True, blank=True)
+    # image = models.ImageField(upload_to='blog_images', null=True, blank=True)
 
     def __str__(self):
         return self.title
