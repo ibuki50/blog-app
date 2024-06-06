@@ -85,6 +85,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME'),  # 環境変数からデータベース名を取得
+#         'USER': os.getenv('DB_USER'),  # 環境変数からユーザー名を取得
+#         'PASSWORD': os.getenv('DB_PASSWORD'),  # 環境変数からパスワードを取得
+#         'HOST': os.getenv('DB_HOST'),  # 環境変数からホスト名を取得
+#         'PORT': '5432',  # PostgreSQLのデフォルトポート
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -151,3 +162,5 @@ LOGIN_URL = 'login'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_RESTRICT_BY_USER = False
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'

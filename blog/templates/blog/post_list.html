@@ -22,18 +22,12 @@
     </select>
     <button type="submit">絞り込み</button>
 </form>
-{% for post in posts %}
+{% for post in reversed(posts) %}
     <div class="post-summary">
         <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.content|remove_images|truncatechars:100|safe }}</p>
         <p>投稿者: {{ post.author.username }}</p>
         <p>カテゴリ: {{ post.category.name }}</p>
-{% comment %}         
-        <div class="post-actions">
-            <a href="{% url 'post_edit' post.pk %}">編集</a>
-            <a href="{% url 'post_delete' post.pk %}">削除</a>
-        </div>
-{% endcomment %}
     </div>
 {% endfor %}
 {% endblock %}
