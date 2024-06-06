@@ -22,7 +22,7 @@
     </select>
     <button type="submit">絞り込み</button>
 </form>
-{% for post in reversed(posts) %}
+{% for post in posts %}
     <div class="post-summary">
         <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.content|remove_images|truncatechars:100|safe }}</p>
